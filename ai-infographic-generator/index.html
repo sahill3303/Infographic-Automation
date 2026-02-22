@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Infographic Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h1>AI Infographic Generator</h1>
+            </div>
+            <button id="theme-toggle" class="icon-button" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <main>
+            <section class="input-section glass-card">
+                <h2>Transform Content into Visuals</h2>
+                <p class="subtitle">Enter a YouTube URL below to generate a professional infographic instantly.</p>
+                
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fa-brands fa-youtube input-icon"></i>
+                        <input type="url" id="youtube-url" placeholder="Paste YouTube Link here..." required>
+                    </div>
+                    <button id="generate-btn" class="primary-button">
+                        <span>Generate Infographic</span>
+                        <i class="fa-solid fa-bolt"></i>
+                    </button>
+                </div>
+                <p id="error-message" class="error-message hidden"></p>
+            </section>
+
+            <div id="loading" class="loading-container hidden">
+                <div class="spinner"></div>
+                <p>Analyzing video content...</p>
+                <p class="sub-loading">This typically takes 30-60 seconds.</p>
+            </div>
+
+            <section id="result-section" class="result-section hidden">
+                <div class="result-header">
+                    <h3>Your Infographic</h3>
+                    <div class="result-actions">
+                        <button id="copy-html-btn" class="secondary-button" title="Copy HTML Code">
+                            <i class="fa-solid fa-code"></i> Copy Code
+                        </button>
+                        <button id="download-btn" class="secondary-button" title="Download as HTML File">
+                            <i class="fa-solid fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="preview-container glass-card">
+                    <div id="result-content">
+                        <!-- Infographic HTML will be injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by AI & n8n Automation</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
